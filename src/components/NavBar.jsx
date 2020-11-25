@@ -7,6 +7,10 @@ class NavBar extends React.Component{
     super(props);
 
   }
+
+  componentDidMount = async() => {
+    console.log(this.props)
+  }
   render(){
     return (
       <>
@@ -20,6 +24,7 @@ class NavBar extends React.Component{
               </Link>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
+                  {this.props.location.pathname == '/details/2' && <span className='ml-5' style={{color: 'white'}}>My favourite!</span>}
                 <Nav className="ml-auto">
                   <Link to="/menu">
                     <div className={this.props.location.pathname === '/menu' ? 'nav-link active' : 'nav-link'}>Menu</div>
